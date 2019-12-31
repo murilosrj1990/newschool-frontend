@@ -58,6 +58,12 @@
                 to="/cadastro"
               >Cadastrar</v-btn>
             </v-col>
+            <v-col cols="12" class="text-center">
+            <v-facebook-login app-id="966242223397117" style="background-color: rgba(0,0,0,0);">
+              <span slot="login">ENTRE COM FACEBOOK</span>
+              <span slot="working">AGUARDE</span>
+            </v-facebook-login>
+          </v-col>
           <v-col cols="12" class="text-center">
             <a class="text-white">Esqueceu sua senha?</a>
           </v-col>
@@ -80,8 +86,13 @@
 
 <script>
 import auth from "../../services/http/auth";
+import VFacebookLogin from 'vue-facebook-login-component';
 
 export default {
+  components: {
+    VFacebookLogin
+  },
+
   data: () => ({
     //flags
     status: true,
